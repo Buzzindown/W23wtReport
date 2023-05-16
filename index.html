@@ -1,0 +1,293 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Work Term Report</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My work term report for my four month co-op at Clear Software during 2023.">
+    <meta name="author" content="Mac">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    // add our menu functionality on load
+    window.addEventListener("load", () => {
+        const toggleMenu = () => {
+            // if we're showing menu, make it toggleable
+            let menuToggle = document.getElementById('menu-toggle');
+            if (window.getComputedStyle(menuToggle).display !== "none") {
+                let menu = document.getElementById("menu");
+                if (window.getComputedStyle(menu).display === "none") {
+                    menu.style.display = 'inline-block'
+                } else {
+                    menu.style.display = 'none'
+                }
+            }
+        };
+
+        let menuToggle = document.getElementById('menu-toggle');
+        let menu = document.getElementById("menu");
+        let children = menu.childNodes;
+        // make the menu options close menu on click
+        for (let i = 0; i < children.length; i++) {
+            if (children[i].nodeName !== "#text") {
+                let link = children[i].childNodes[0];
+                link.addEventListener("click", toggleMenu)
+            }
+        }
+        menuToggle.addEventListener("click", toggleMenu)
+    })
+
+    window.addEventListener("resize", () => {
+        let menuToggle = document.getElementById('menu-toggle');
+        let menu = document.getElementById("menu");
+        menu.style.display = ""
+        menu.style.boder = ""
+        menuToggle.style.display = ""
+    })
+</script>
+
+<body>
+    <header>
+        <img id="menu-toggle" src="media/menu-icon/2x/outline_menu_white_48dp.png" alt="menu button">
+        <ul id="menu">
+            <li><a href="#intro">Intro</a></li>
+            <li><a href="#goals">Goals</a></li>
+            <li><a href="#my-job">My Job</a></li>
+            <li><a href="#reflections">Reflections</a></li>
+            <li><a href="#summary">Summary</a></li>
+        </ul>
+    </header>
+    <a id="intro"></a>
+    <div id="header-space"></div>
+    <div id="main-text">
+        <section>
+            <div id="title">
+                <h1>Winter 2023 Work Term Report</h1>
+                <picture>
+                    <img id="RB-logo" src="media/clear-logo.png" alt="Clear Software logo">
+                </picture>
+            </div>
+            <a id="intro"></a>
+            <p>
+                &emsp;&emsp;Dear reader, the following article will detail my time at Clear 
+                Software where I spent four months as a web developer during the winter of 
+                2023. I thoroughly enjoyed my time and hope that this article gives you some 
+                insight into what my day to day experiences consisted of and what exactly made
+                 Clear Software such an enjoyable place to work at. 
+            </p>
+            <h2>
+                &lt;About-Clear-Software/&gt;
+            </h2>
+            <p>&emsp;&emsp;Clear software is a relatively small company with two core developers
+                 who have been leading the company since 2009. These two have been working together
+                  for a long time and are brilliant developers, both attended Waterloo for their 
+                  undergrads in comp-sci and math related fields. Clear also consists of a QA department
+                   and depending on how many interns are present, the team ranges from 5-8 people in 
+                   total. Clear Software is a custom<a id="goals"></a> software shop, creating solutions for whatever
+                    platform or industry is required. The team has worked on significant projects
+                     ranging from low-level hardware and robots to fully fledged and scalable web
+                      apps. As for where I would be working, that would be in my office at home as 
+                      Clear is currently operating fully remotely. Once upon a time they did have 
+                      an office in the Waterloo region, but when Covid shut everything down that 
+                      was no longer necessary.
+            </p>
+        </section>
+        <section>
+            <h2>
+                &lt;Goals/&gt;
+            </h2>
+            <p>
+                &emsp;&emsp;Now that you’re in the loop regarding what Clear Software does, 
+                let’s talk about what I wanted to get out of this term. Before the term 
+                began I was tasked with producing some personal goals that would help 
+                steer me during the next four months. I knew from prior terms that these goals 
+                had to be well-suited to my time frame and they needed to be ambitious enough 
+                that I could strive for them, but also not be too far away to the point that they 
+                were unachievable. The following is what I came up with.
+            </p>
+            <ul>
+                <li>
+                    Become better at managing my time during working hours. I often struggled
+                     to find the balance between working too much, or possibly not working 
+                     enough throughout the day. Other pitfalls of poor time management 
+                     included working too long without taking a break and eventually fatiguing, 
+                     or staying up late/waking up early to chase down a bug that I was hooked 
+                     on solving. My plan was to get serious about my time and consistently
+                      take short breaks after ~30 minutes of very focused work. You might
+                       think that seems ridiculous, who needs a break after only 30 minutes 
+                       anyways. But, it’s something that’s worked for me and many other 
+                       individuals, particularly while studying during exam season. 
+                    <br />
+
+                </li>
+                <li>
+                    Take on some significant chunk of a project or lead development on a 
+                    large piece of functionality in a very independent way. This goal
+                     has a lot to do with me wanting to “own” some part of the codebase.
+                      It’s fun to be a bit of an expert on some area of the codebase and 
+                      I think the best way to learn the ins and outs is to be there when
+                       it gets created, or better yet, be the creator! 
+                    <br />
+
+                </li>
+                <li>
+                    Get better at understanding other people’s code and the way they write,
+                     the patterns they use, then take that information and use it to improve
+                      my own code. Similar to reading plain English, I think that it’s 
+                      super valuable and important to be able to quickly and easily read other
+                       peoples’ code. Some of the most skilled devs I know can pick up a random 
+                       piece of scrappy looking code and tell you what it does in a matter 
+                       of seconds, it’s like a super power. With Clear being such a small 
+                       company, I think it will be important to write code that will blend 
+                       in well. The idea here is to write code and not have anyone be able to 
+                       tell who wrote it (without using git blame, cheater!). A seamless looking
+                        code base would be easier for new people to read and makes maintenance easier too.
+                    <br />
+
+                </li>
+            </ul>           
+            <p>
+                &emsp;&emsp;These were only my larger and more general goals for the work term. 
+                As the weeks went on, I found myself setting many smaller goals and checking in 
+                and evaluating my progress throughout the work term. Oftentimes I would be tasked 
+                with learning some new technology and would set myself a goal with some degree of 
+                mastery in mind as well as a date. This helped me learn stuff more efficiently, 
+                as I was able to create a pace of learning which I could use to guide myself. 
+                Please see the reflections section <a id="my-job"></a>to see how I did with the goals mentioned above. 
+            </p>
+        </section>
+        <p>
+            &emsp;&emsp;That summarizes my larger goals for the term, of course I also came up with 
+            smaller ones week to week and day to day that helped me keep a solid learning 
+            trajectory throughout the term. Now that we’ve discussed my goals for the term, let’s 
+            talk about what I actually did. 
+        </p>
+        <section>
+            <h2>
+                &lt;My-Job/&gt;
+            </h2>
+            <p>
+                &emsp;&emsp;When I joined the team, Clear was in the later part of their
+                 main development phase on their latest project, prior to anything going live. 
+                 The project is a large internal web based tool for one of Canada’s largest 
+                 structured settlement firms. This tool will end up handling thousands of
+                  gigs worth of personal data and boasts a suite of very industry specific 
+                  tools/workflows and internal management systems to help speed up the 
+                  company’s various processes. I will also mention here that I worked
+                   almost exclusively in the front end, with the occasional need to
+                    work on some other areas of the code base.  
+                <br />
+                <br />
+                &emsp;&emsp;The stack consisted of MariaDB, Express, React and Node. 
+                The fun part about all of this was that 99% of our communications 
+                were done with GraphQL rather than REST APIs. I hadn’t worked with
+                 GraphQL before, and all I knew was that the requests looked really 
+                 weird in comparison to RESTful stuff. Nonetheless I was excited, 
+                 the first week was fairly typical onboarding stuff. I got to sink
+                  my teeth into the code base and was incredibly impressed. The lead
+                   frontend developer had done a really really good job of writing
+                    what appeared to be highly organized, clean, and maintainable 
+                    code. This was very exciting as I hadn’t worked in a codebase 
+                    this neat before.  
+                <br />
+                <br />
+                &emsp;&emsp;After the first week I got busy with some tickets, 
+                I was really enjoying my time. My initial PRs often had some change
+                 requests because the code base was so large, and I would end 
+                 up writing new functions that were already written somewhere
+                  else and I had just missed them. After a while I got the hang 
+                  of things and my PRs went smoother, I felt like I was writing
+                   pretty good code and I was absolutely putting a lot of effort 
+                   in to try and make it look similar to the existing code. This
+                    paid off I think, one of the comments during my exit interview 
+                    was related to this and It was very positive feedback.  
+                <br />
+                <br />
+                &emsp;&emsp;After the first month and a half or so I got my first 
+                big set of new feature tickets. This feature would consist of 
+                a lot of UI additions and it would in essence be an internal
+                 event manager that integrated with our structure of companies
+                  and employees to help make managing invites easier. I had a 
+                  lot of fun with this and it went well without too many hang ups.
+                   I felt like I had done something cool and independent, and this
+                    was some part of the code that I could absolutely own per
+                     my goal up above.
+            </p>
+            <picture class="rect-img-container">
+                <img srcset="media/AnalyticsDiagTwoSmall.png 700w," src="media/AnalyticsDiagTwo.png" alt="Analytics diagram">
+            </picture>
+            <p>
+                  &emsp;&emsp;I continued working on bug fixes and tickets for some time until 
+                  a new request came up. The company this project is for has a 
+                  current system that is outdated and lacking a lot of features, 
+                  which is why they’ve commissioned Clear to write a new one. However,
+                   one of the functionalities of this system that did work well, and would 
+                   need to stick around was an automated reporting system, for various accounting
+                    and analytics related reports. I got to researching new solutions right 
+                    away as the old solution was written in Microsoft Visual FoxPro and would 
+                    not be sticking around. After a couple of attempts and experimenting with
+                     various solutions we wound up agreeing to use JaperSoft’s reporting tools.
+                      They have a cool report building tool and you can easily spin up a 
+                      reporting server and configure it to fire off automated reports.
+                       I got part way through the implementation of this before my time was up, 
+                       I hope that it all comes together nicely!  
+            </p>
+            <picture class="rect-img-container">
+                <img srcset="media/AnalyticsDiagOneSmall.png 700w," src="media/AnalyticsDiagOne.png" alt="Analytics diagram">
+            </picture>
+
+            <p>
+                &emsp;&emsp;Overall, I really enjoyed the work at Clear. The automated reporting 
+                researching/experimenting was probably my least favorite part as it was much 
+                more reading, and much less coding. <a id="reflections"></a>I loved working on the events feature, 
+                as I could bury myself in code for multiple days at a time. I guess this has 
+                helped me discover some of the specific things that I do and do not enjoy. 
+        <section>
+            <h2>
+                &lt;Reflections/&gt;
+            </h2>
+            <p>
+                &emsp;&emsp;Remember those goals I mentioned above? It’s okay if you don’t, 
+                they are my goals after all. Anyhow, let’s do a little reflecting on how I 
+                did with those goals. 
+                <br />
+                <br />
+                My first goal was to get better at managing my time. A 
+                big part of this I found was just being surrounded by distractions while working 
+                from home. I removed a lot of the distractions, and set timers to take breaks 
+                and it worked great, I spent less time futzing around and was more productive.
+                 My second goal was to take ownership of a significant feature, I was able to 
+                 achieve this with both the events feature implementation and the automated 
+                 reporting research and development. I would say this was another successful goal.
+                 My final goal was to get better at reading others' code, and take what I learned 
+                 and implement it into my own code. I would also say this one was a success, 
+                 I received multiple pieces of feedback throughout the term in PRs and meetings 
+                 saying that it was very clear that I was making strong efforts to make code
+                  that looked similar to everything that was already written. I think I was most
+                   satisfied with this goal, since It was something that took some time and effort 
+                   to get right, but once I got it, the team was able to appreciate my efforts.
+                    All in, I consider this to be a very successful term. 
+            </p>
+        </section>
+        <section>
+            <a id="summary"></a>
+            <h2>
+                &lt;Summary/&gt;
+            </h2>
+            <p>
+                &emsp;&emsp;In conclusion, I had a great time at Clear Software. I enjoyed my work as 
+                a frontend web developer, the tech stack was interesting and the work was rewarding.
+                 I created what I felt were reasonable goals and achieved all of them, although
+                  perhaps I should have been more ambitious with them. Something about shooting 
+                  for the stars and landing in the clouds, being more ambitious would have raised 
+                  the risk of failure but that’s probably necessary to grow more. I’ll keep that 
+                  in mind for my next term as a software developer at Desire2Learn. 
+            </p>
+        </section>
+    </div>
+    <footer></footer>
+</body>
+
+</html>
